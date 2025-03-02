@@ -33,8 +33,8 @@
   --nav-hover-color: #FAFAFA; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #FAFAFA; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #FAFAFA; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0d42ff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #0d42ff; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #B100E8; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1016,7 +1016,8 @@ section,
   margin-bottom: 10px;
 }
 
-.featured-services .service-item .readmore {
+.featured-services .service-item .readmore,
+.card .readmore{
   display: flex;
   align-items: center;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
@@ -1031,7 +1032,8 @@ section,
 
 .featured-services .service-item:hover .title,
 .featured-services .service-item:hover .readmore,
-.featured-services .service-item:hover .icon i {
+.featured-services .service-item:hover .icon i ,
+.card .readmore{
   color: var(--accent-color);
 }
 
@@ -1108,15 +1110,17 @@ section,
   font-size: 18px;
   margin-bottom: 5px;
   padding: 10px 30px;
+  padding-top: 0px;
+  padding-bottom: 5px;
   text-transform: uppercase;
 }
 
-.services .card a {
+.services .card a{
   color: var(--heading-color);
   transition: 0.3;
 }
 
-.services .card a:hover {
+.services .card:hover a {
   color: var(--accent-color);
 }
 
@@ -1127,7 +1131,7 @@ section,
   font-size: 15px;
 }
 
-.services .card:hover .card-img img {
+.services .card:hover .card-img img{
   transform: scale(1.1);
 }
 
@@ -2069,4 +2073,115 @@ section,
 .web_front{
   display: flex;
   justify-content: center;
+}
+
+.tags{
+  margin-top: 20px;
+  border-top: 2px solid var(--accent-color);
+    display: flex;
+    text-align: center;
+   
+    white-space-collapse: collapse;
+    text-wrap-mode: nowrap;
+    flex-direction: row;
+}
+
+.tag_inner{
+  justify-content: center;
+  list-style: none;
+  list-style-position: initial;
+  list-style-image: initial;
+  list-style-type: none;
+  overflow-x: scroll;
+  width: 100%;
+  margin: 0px 50px 0px 50px;
+  
+}
+
+.tag_item{
+  display: inline-block;
+    padding: 5px 12px;
+    padding-top: 5px;
+    padding-right: 12px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    unicode-bidi: isolate;
+    font-size: 22px;
+}
+
+.tag_text{
+  color: white;
+}
+.tag_text:hover{
+  color: var(--accent-color);
+  transition: .2s ease-in;
+}
+
+a#tags_link-on {
+  color: var(--accent-color);
+}
+
+#readmore-text{
+  display: flex;
+  text-align: right;
+  padding: 10px 30px;
+}
+
+#news-photo{
+  aspect-ratio: 16/9;
+  max-width: 100%;
+  height: auto;
+}
+
+.date-tag{
+    font-weight: lighter;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin: 60px 0px 5px 0px;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+#search-tab-news{
+    width: 100%;
+    position: relative;
+    min-height: 0px;
+    padding: 0px 0 0px 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+
+}
+
+#tag_link-on-number{
+  background-color: var(--accent-color);
+  color: white;
+}
+
+#fixed-search{
+  min-width: 300px;
+  max-width: 700px;
+  width: 700px;
+}
+
+@media (max-width: 1200px){
+  #fixed-search{
+    width: 90%;
+  }
 }
