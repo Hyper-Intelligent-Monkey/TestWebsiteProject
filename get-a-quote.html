@@ -45,38 +45,21 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Logis</h1>
+        <h1 class="sitename">Future of Transportation-News</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html" >Home<br></a></li>
+          <li><a href="services.html">News</a></li>
           <li><a href="pricing.html">Advertise</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+      <a class="btn-getstarted" id="in_subscribe">Subscribe</a>
 
     </div>
   </header>
@@ -84,14 +67,13 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+    <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Get a Quote</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <h1>Login or Register</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Get A Quote</li>
+            <li class="current">Subscribe</li>
           </ol>
         </nav>
       </div>
@@ -104,61 +86,180 @@
 
         <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div>
+          <div class="col-lg-5 quote-bg" style="background-image: url(Add-ons/images/phone.jpeg);"></div>
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
             <form action="forms/get-a-quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+              <ul class="subscribe-group">
+                <li class="subscribe-active" href="#is-active"><a ><h3>Sign Up</h3></a>
+                </li>
+                <li href="#not-active"><a ><h3>Login</h3></a>
+                </li>
+                
+              </ul>
 
-              <div class="row gy-4">
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const listItems = document.querySelectorAll(".subscribe-group li");
+                  const signUp = document.getElementById("sign-up");
+                  const login = document.getElementById("login");
+  
+                  listItems.forEach((item, index) => {
+                    item.addEventListener("click", function () {
+                      document.querySelector(".subscribe-active")?.classList.remove("subscribe-active");
+                      this.classList.add("subscribe-active");
+  
+                      if (index === 0) {
+                          signUp.style.display = "block";
+                          login.style.display = "none";
+                      } else {
+                          signUp.style.display = "none";
+                          login.style.display = "block";
+                      }
+                    });
+                  });
+                });
+              </script>
+              <div class="register-login-container">
+              <!--Sign Up-->
+              <div id="sign-up">
+              <div class="row gy-4" >
+
+                <div class="col-lg-12"v style="margin: 0px;">
+                  <h4>Your Name</h4>
+                </div>
+
 
                 <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required="">
+                  <input type="text" name="firstName" class="form-control" placeholder="First Name" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required="">
+                  <input type="text" name="lastName" class="form-control" placeholder="Last Name" required="">
                 </div>
 
-                <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required="">
-                </div>
-
-                <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
-                </div>
-
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
+                <div class="col-lg-12" style="margin: 0px;">
+                  <h4>Email</h4>
                 </div>
 
                 <div class="col-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                  <input type="email" class="form-control" name="email" placeholder="you@example.com" required="">
+                </div>
+
+                <div class="col-lg-12" style="margin: 0px;">
+                  <h4>Telephone Number</h4>
                 </div>
 
                 <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                  <input type="text" class="form-control" name="phone" placeholder="09000000000" required="">
                 </div>
 
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                <div class="col-lg-12" style="margin: 0px;">
+                  <label for="userPassword"><h4>User Password</h4></label>
                 </div>
+              
+                <div class="col-12">
+                  <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="e.g., Password*123" required>
+                </div>
+              
+                <div class="col-lg-12" style="margin: 0px;">
+                  <label for="confirmPassword"><h4>Confirm Password</h4></label>
+                </div>
+              
+                <div class="col-12">
+                  <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="e.g., Password*123" required>
+                </div>
+                <hr>
+
+                <div style="margin-bottom: 0px; margin-top: 0px;">
+                  <p style="font-size: 18px;">
+                      We'd love to send you the latest news and information. Please choose your subscription preferences below:
+                  </p>
+              </div>
+              
+              <div style="margin-top: 0px;">
+                  <label><input type="checkbox" name="subscription" value="news" checked> Latest News</label>
+                  <label><input type="checkbox" name="subscription" value="offers" checked> News Tag Even</label>
+                  <label><input type="checkbox" name="subscription" value="events" checked> News Tag Odd</label>
+                  <label><input type="checkbox" name="subscription" value="updates" checked> News Tag Prime</label>
+                  <label><input type="checkbox" name="subscription" value="research" checked> News Tag Composite</label>
+              </div>
+                
 
                 <div class="col-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
+                  <div class="sent-message">You have successfully created an account. Thank you!</div>
 
-                  <button type="submit">Get a quote</button>
+                  <button type="submit">Submit</button>
                 </div>
 
               </div>
+              </div>
+              <!--Login-->
+              <div id="login">
+              <div class="row gy-4" >
+
+                <div class="col-lg-12"v style="margin: 0px;">
+                  <h4>Username</h4>
+                </div>
+
+
+                <div class="col-md-6">
+                  <input type="text" name="userName" class="form-control" placeholder="Username" required="">
+                </div>
+
+                
+                <div class="col-lg-12" style="margin: 0px;">
+                  <label for="userPassword"><h4>Password</h4></label>
+                </div>
+              
+                <div class="col-12">
+                  <input type="password" class="form-control" id="userPassword" name="Password" placeholder="e.g., Password*123" required>
+                </div>
+                
+
+                <div class="col-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">You have successfully created an account. Thank you!</div>
+
+                  <button type="submit">Log In</button>
+                </div>
+
+              </div>
+              </div>
+              </div>
+              <script>
+              document.addEventListener("DOMContentLoaded", function () {
+  const listItems = document.querySelectorAll(".subscribe-group li");
+  const signUpSection = document.getElementById("is-active");
+  const loginSection = document.getElementById("not-active");
+
+  listItems.forEach((item, index) => {
+      item.addEventListener("click", function () {
+          // Change active tab
+          document.querySelector(".subscribe-active")?.classList.remove("subscribe-active");
+          this.classList.add("subscribe-active");
+
+          // Toggle visibility based on index
+          if (index === 0) { // "Sign Up" clicked
+              signUpSection.style.display = "block";
+              loginSection.style.display = "none";
+          } else { // "Login" clicked
+              signUpSection.style.display = "none";
+              loginSection.style.display = "block";
+          }
+      });
+  });
+});
+
+              
+            </script>
+
             </form>
+
+            
           </div><!-- End Quote Form -->
 
         </div>
@@ -175,59 +276,55 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Logis</span>
+            <span class="sitename">Future of Transportation-News</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/Hyper-Intelligent-Monkey/WebsiteProject" target="_blank"><i class="bi bi-github"></i></a>
+
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">News</a></li>
+            <li><a href="pricing.html">Advertise</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="get-a-quote.html">Subscribe</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="pricing.html">Advertise News</a></li>
+            <li><a href="get-a-quote.html">News Subscrition</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p>T. De Castro Street</p>
+          <p>Sorsogon, Bulan Sorsogon</p>
+          <p>Philippines</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(056) 411 1565</span></p>
+          <p><strong>Email:</strong> <span>sorsubulan@sorsu.edu.ph</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Logis</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Future of Transportation</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="about.html#Us">Group 11</a>
       </div>
     </div>
 
